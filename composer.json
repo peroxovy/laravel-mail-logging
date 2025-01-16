@@ -1,0 +1,23 @@
+{
+    "name": "peroxovy/laravel-mail-logging",
+    "description": "Package which allows to send logs to e-mail.",
+    "type": "library",
+	"require": {
+        "php": ">7.0",
+        "illuminate/support": "9.x",
+        "monolog/monolog": "2.x"
+    },
+    "license": "MIT",
+	"autoload": {
+        "psr-4": {
+            "Peroxovy\\LaravelMailLogging\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "peroxovy",
+			"email": "piotr.mazur.mail@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
