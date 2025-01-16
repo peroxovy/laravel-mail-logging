@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Peroxovy\\LaravelMailLogging\\TeamsLoggingServiceProvider"
+                "Peroxovy\\LaravelMailLogging\\Providers\\MailLoggingServiceProvider"
             ],
             "aliases": {
                 "MailLogging": "Peroxovy\\LaravelMailLogging\\MailLogging"
