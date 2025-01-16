@@ -19,5 +19,15 @@
 			"email": "piotr.mazur.mail@gmail.com"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Peroxovy\\LaravelMailLogging\\TeamsLoggingServiceProvider"
+            ],
+            "aliases": {
+                "MailLogging": "Peroxovy\\LaravelMailLogging\\MailLogging"
+            }
+        }
+    },
     "minimum-stability": "dev"
 }
