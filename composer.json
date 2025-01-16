@@ -3,9 +3,9 @@
     "description": "Package which allows to send logs to e-mail.",
     "type": "library",
 	"require": {
-        "php": ">7.0",
-        "illuminate/support": "9.x",
-        "monolog/monolog": "2.x"
+        "php": ">=7.4",
+        "illuminate/support": "^9.0",
+        "monolog/monolog": "^2.0"
     },
     "license": "MIT",
 	"autoload": {
@@ -29,5 +29,6 @@
             }
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
