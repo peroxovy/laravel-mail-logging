@@ -33,7 +33,7 @@ class MailLogger
         return new \Monolog\Logger(
             getenv('APP_NAME'),
             [
-                new MailLoggingHandler($config['from'], $config['to'], $config['subject'], $config['format'], $config['level'])
+                new MailLoggingHandler($config['from'], $config['to'], $config['subject'], $config['level'])
             ],
             $processors
         );
