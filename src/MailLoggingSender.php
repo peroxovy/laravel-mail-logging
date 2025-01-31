@@ -11,14 +11,12 @@ class MailLoggingSender
     protected string $from;
     protected array $to;
     protected string $subject;
-    protected string $format;
 
-    public function __construct(string $from, array $to, string $subject = 'Application Error Log', string $format = 'plain')
+    public function __construct(string $from, array $to, string $subject = 'Application Error Log')
     {
         $this->from = $from;
         $this->to = $to;
         $this->subject = $subject;
-        $this->format = $format;
     }
 
     public function send(string $message, array $context = []): void
