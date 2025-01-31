@@ -14,7 +14,7 @@ class MailLoggingServiceProvider extends ServiceProvider
             $this->publishes([$configPath => config_path('mail-logging.php')], 'config');
         }
     }
-    
+
     public function register()
     {
         if ($this->app instanceof \Illuminate\Foundation\Application) {
@@ -28,7 +28,10 @@ class MailLoggingServiceProvider extends ServiceProvider
                 $config['from'] ?? 'noreply@example.com',
                 $config['to'] ?? [],
                 $config['subject'] ?? 'Application Error Log',
-                $config['format'] ?? 'plain'
+                $config['processor_memory_usage'] ?? true,
+                $config['processor_memory_peak'] ?? true,
+                $config['processor_web'] ?? true,
+                $config['processor_git'] ?? true,
             );
         });
 

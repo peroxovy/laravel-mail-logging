@@ -3,41 +3,56 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | E-mail nadawcy
+    | E-mail author
     |--------------------------------------------------------------------------
     |
-    | Adres e-mail, z którego będą wysyłane logi błędów.
+    | Address from where e-mails would be sent. It is not the host.
     |
     */
     'from' => env('MAIL_LOG_FROM', 'noreply@example.com'),
 
     /*
     |--------------------------------------------------------------------------
-    | E-mail odbiorców
+    | E-mail recipients
     |--------------------------------------------------------------------------
     |
-    | Lista adresów e-mail, na które będą wysyłane logi błędów.
+    | The list of e-mail recipients.
     |
     */
     'to' => explode(',', env('MAIL_LOG_TO', 'admin@example.com')),
 
     /*
     |--------------------------------------------------------------------------
-    | Temat wiadomości
+    | Message subject
     |--------------------------------------------------------------------------
     |
-    | Domyślny temat wiadomości e-mail z logami błędów.
+    | Default e-mail subject with exception log.
     |
     */
     'subject' => env('MAIL_LOG_SUBJECT', 'Application Error Log'),
 
     /*
     |--------------------------------------------------------------------------
-    | Format wiadomości
+    | Message format
     |--------------------------------------------------------------------------
     |
-    | Format treści wiadomości: 'plain' lub 'html'.
+    | Default format of the message - currently supported : plain
     |
     */
     'format' => env('MAIL_LOG_FORMAT', 'plain'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Log processors
+    |--------------------------------------------------------------------------
+    |
+    | Determines if use logging processors.
+    |
+    */
+    'processor_memory_usage' => env('MAIL_LOG_MEMORY_USAGE', true),
+    'processor_memory_peak' => env('MAIL_LOG_MEMORY_PEAK', true),
+    'processor_web' => env('MAIL_LOG_WEB', true),
+    'processor_git' => env('MAIL_LOG_GIT', true),
+
+
 ];

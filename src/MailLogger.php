@@ -12,16 +12,30 @@ class MailLogger
 {
     public function __invoke(array $config)
     {
+        $processors = [];
+
+        if (!empty($config['processors']['memory_usage'])) {
+            $processors[] = new MemoryUsageProcessor();
+        }
+
+        if (!empty($config['processors']['memory_peak'])) {
+            $processors[] = new MemoryPeakUsageProcessor();
+        }
+
+        if (!empty($config['processors']['web'])) {
+            $processors[] = new WebProcessor();
+        }
+
+        if (!empty($config['processors']['git'])) {
+            $processors[] = new GitProcessor();
+        }
+
         return new \Monolog\Logger(
-            getenv('APP_NAME'), 
-            [ 
-                new MailLoggingHandler($config['from'], $config['to'], $config['subject'], $config['format']) 
-            ], 
+            getenv('APP_NAME'),
             [
-                new MemoryUsageProcessor(), 
-                new MemoryPeakUsageProcessor(), 
-                new WebProcessor(), 
-                new GitProcessor()
-            ]);
+                new MailLoggingHandler($config['from'], $config['to'], $config['subject'], $config['format'], $config['level'])
+            ],
+            $processors
+        );
     }
 }
